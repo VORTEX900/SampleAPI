@@ -1,0 +1,14 @@
+package com.medialogic.bean;
+
+import jakarta.validation.constraints.NotBlank;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+public class CfRequest {
+	
+	@NotBlank(message = "cf is mandatory")
+	private String cf;
+
+}

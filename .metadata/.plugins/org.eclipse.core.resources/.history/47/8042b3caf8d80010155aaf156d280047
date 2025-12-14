@@ -1,0 +1,43 @@
+package com.medialogic;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.web.server.LocalServerPort;
+import org.springframework.http.ResponseEntity;
+
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+class SampleApiApplicationTests {
+	
+	
+	@LocalServerPort
+	private int port;
+
+	@Autowired
+	private TestRestTemplate restTemplate;
+
+	@Test
+	void contextLoads() {
+	}
+	
+	@Test
+	void testServerCheck() {
+	        String url = "http://localhost:" + port + "/home/serverCheck";
+	        ResponseEntity<Void> response = restTemplate.getForEntity(url, Void.class);
+	        assertThat(response.getStatusCode().is2xxSuccessful()).isTrue();
+	    }
+
+	    @Test
+	    void testElaborateCF() {
+	        String url = "http://localhost:" + port + "/home/elaborateCF";
+
+	        CfRequest request = new CfRequest();
+	        request.setCf("RSSMRA85M01H501U"); // esempio CF
+
+	        HttpEntity<CfRequest> entity = new HttpEntity<>(request);
+	        ResponseEntity<Map> response = restTemplate.exchange(url, HttpMethod.POST, entity, Map.class);
+
+	        assertThat(response.getStatusCode().is2xxSuccessful()).isTrue();
+	        assertThat(response.getBody()).containsKey("message");
+	    }
+	
+}

@@ -1,0 +1,5 @@
+org.junit.jupiter.api.extension.ParameterResolutionException: No ParameterResolver registered for parameter [org.springframework.test.web.servlet.MockMvc mockMvc] in constructor [public com.medialogic.SampleApiApplicationTests(org.springframework.test.web.servlet.MockMvc,com.fasterxml.jackson.databind.ObjectMapper)].
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+

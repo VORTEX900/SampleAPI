@@ -1,0 +1,39 @@
+package com.medialogic.controller;
+
+import java.util.Map;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.medialogic.bean.CfRequest;
+import com.medialogic.service.ElaborateCFService;
+
+import jakarta.validation.Valid;
+
+@RestController
+@RequestMapping("/home")
+public class SampleAPIController {
+	
+	@GetMapping("/serverCheck")
+	public ResponseEntity<Void> serverCheck(){
+		return ResponseEntity.ok().build();
+	}
+	
+	public ElaborateCFService elaborateCFService;
+	
+	
+	
+	@PostMapping("/elaborateCF")
+	public ResponseEntity<Map<String, String>> elaborateCF(@Valid @RequestBody CfRequest cfRequest){
+		
+		String cf = cfRequest.getCf();
+		
+		return ResponseEntity.ok(Map.of("message", ))
+		
+	}
+
+}

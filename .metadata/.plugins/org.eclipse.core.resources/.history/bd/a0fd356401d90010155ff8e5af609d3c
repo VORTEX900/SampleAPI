@@ -1,0 +1,27 @@
+package com.medialogic;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
+import org.springframework.test.web.servlet.client.RestTestClient;
+
+import com.medialogic.controller.SampleAPIController;
+import com.medialogic.service.ElaborateCFService;
+
+class SampleApiApplicationTests {
+	
+	@BeforeEach
+	void setUp() {
+		RestTestClient.bindToController(new SampleAPIController(new ElaborateCFService())).build();
+	}
+	
+	private RestTestClient client;
+	
+	@Test
+	void contextLoads() {
+		client.get().uri("/home/serverCheck").exchange().expectStatus().isOk();
+	}
+	
+	
+}

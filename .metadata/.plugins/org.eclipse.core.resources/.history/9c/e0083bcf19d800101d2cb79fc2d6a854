@@ -1,0 +1,19 @@
+package com.medialogic.controller;
+
+import java.util.Map;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/home")
+public class SampleAPIController {
+	
+	@GetMapping("/serverCheck")
+	public ResponseEntity<Map<String, Object>> serverCheck(){
+		return ResponseEntity.ok();
+	}
+
+}

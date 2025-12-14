@@ -1,0 +1,15 @@
+import org.springframework.stereotype.Service;
+
+import com.medialogic.bean.CfResponse;
+
+@Service
+public class elaborateCFService {
+
+	public CfResponse elaborateCF(String cf) {
+		CfResponse cfResponse = new CfResponse(); 
+		
+		
+		return cfResponse;
+	}
+	
+}

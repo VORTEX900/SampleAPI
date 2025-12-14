@@ -1,0 +1,15 @@
+package com.medialogic;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
+class SampleApiApplicationTests {
+	
+	private resttes
+
+	@Test
+	void contextLoads() {
+	}
+	
+}

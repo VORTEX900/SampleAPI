@@ -1,0 +1,16 @@
+package com.medialogic.bean;
+
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+public class CfRequest {
+	
+	@Size(min = 16, max = 16, message = "cf must be 16 characters long")
+	@NotBlank(message = "cf is mandatory")
+	private String cf;
+
+}

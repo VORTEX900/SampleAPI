@@ -1,0 +1,5 @@
+package com.medialogic.controller;
+
+public class SampleAPIController {
+
+}

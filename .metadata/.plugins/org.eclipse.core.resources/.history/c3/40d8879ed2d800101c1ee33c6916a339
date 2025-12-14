@@ -1,0 +1,5 @@
+package com.medialogic.exception;
+
+public class GlobalExcetpionHandler {
+
+}
